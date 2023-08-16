@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+
+        form {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            width: 500px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        form input,
+        form textarea,
+        form select {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            font-size: 16px;
+        }
+
+        form button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <title>ورود</title>
+</head>
+
+<body>
+    {% if error_message %}
+    <p>{{ error_message }}</p>
+    {% endif %}
+    <form method="post" dir="rtl">
+        {% csrf_token %}
+        <label for="username">نام کاربری </label>
+        <input type="text" id="username" name="username"><br>
+        <label for="password">رمزعبور </label>
+        <input type="password" id="password" name="password"><br>
+        <button type="submit">ورود</button>
+        <a href="/signup" type="button">ثبت نام</ذ>
+    </form>
+</body>
+
+</html>
